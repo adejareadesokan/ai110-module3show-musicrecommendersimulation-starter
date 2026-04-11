@@ -18,18 +18,33 @@ Replace this paragraph with your own summary of what your version does.
 ## How The System Works
 
 Explain your design in plain language.
-
+Each attribute has a weighted score in the order - mood(3.0) , energy(2.5) , acousticness(2.0), genre(2.0), tempobpm(1.5), danceability(1.0) and valence(0,5). The scores are calculated over 1 then multiplied by the weight, with a total score being 12.5. When calculating non-weighted score, mood and genre are boolean, either score as 1 or 0, because it either matches or not.  the rest of the attributes by finding the absolute difference between the target value and song value then subtracting it from 1. bpm has a max value of 200, so its unweighted value is the bpm represented as a fraction of 200 then the value subtracted from one.
+Then songs will be ranked based off this metric then the ones with the highest scores are recommended. A potential bias is that it favours mood over genre so someone who prefers r & b might end up with some rap songs or jazz songs because they have a chill mood.
 Some prompts to answer:
 
 - What features does each `Song` use in your system
   - For example: genre, mood, energy, tempo
+  song stores 
+  id: int
+    title: str
+    artist: str
+    genre: str
+    mood: str
+    energy: float
+    tempo_bpm: float
+    valence: float
+    danceability: float
+    acousticness: float
 - What information does your `UserProfile` store
+UserProfile stores their favorite genre, mood, the target energy of the song, their acoustic preference
 - How does your `Recommender` compute a score for each song
+explained above
 - How do you choose which songs to recommend
+songs will be ranked based off the  algorithm logic then the ones with the highest scores are recommended
 
 You can include a simple diagram or bullet list if helpful.
 
----
+---![alt text](image.png)
 
 ## Getting Started
 
