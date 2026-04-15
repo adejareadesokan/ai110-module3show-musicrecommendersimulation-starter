@@ -45,7 +45,7 @@ songs will be ranked based off the  algorithm logic then the ones with the highe
 You can include a simple diagram or bullet list if helpful.
 
 ---![alt text](image.png)
-
+![alt text](image-1.png)
 ## Getting Started
 
 ### Setup
@@ -88,12 +88,16 @@ Use this section to document the experiments you ran. For example:
 - What happened when you changed the weight on genre from 2.0 to 0.5
 - What happened when you added tempo or valence to the score
 - How did your system behave for different types of users
-
----
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
 
 ## Limitations and Risks
 
 Summarize some limitations of your recommender.
+it tends to have a bias on mood and genre, usually ignoring numerical values. it another thing is that mood and genre mathces are all or nothing so any form of cross- compatibility would be complicated. same thing for acousticness as likes_acousticness levels of 0.5 gets penalized the same way as 0.97. 
 
 Examples:
 
